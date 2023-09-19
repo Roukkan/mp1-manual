@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>KitchenKonnect</title>
+
+    <link rel="icon" type="image/x-icon" href="kk3_lMv_icon.ico">
+
+    <style>
+      /* arroz caldo fav button     */
+     .Chk1 .FavLabel,
+     .Chk2 .FavLabel, 
+     .Chk3 .FavLabel, 
+     .Chk4 .FavLabel, 
+     .Chk5 .FavLabel, 
+     .Chk6 .FavLabel {
+       /* Presentation */
+       font-size: 25px
+     }
+
+     /* Required Styling */
+
+     .Chk1 .FavLabel input[type="checkbox"],
+     .Chk2 .FavLabel input[type="checkbox"],
+     .Chk3 .FavLabel input[type="checkbox"],
+     .Chk4 .FavLabel input[type="checkbox"],
+     .Chk5 .FavLabel input[type="checkbox"],
+     .Chk6 .FavLabel input[type="checkbox"] {
+       display: none;
+     }
+
+     .Chk1 .custom-checkbox1,
+     .Chk2 .custom-checkbox2,
+     .Chk3 .custom-checkbox3,
+     .Chk4 .custom-checkbox4,
+     .Chk5 .custom-checkbox5,
+     .Chk6 .custom-checkbox6 {
+       margin-left: 2em;
+       position: relative;
+       cursor: pointer;
+     }
+
+     .Chk1 .custom-checkbox1 .bi,
+     .Chk2 .custom-checkbox2 .bi,
+     .Chk3 .custom-checkbox3 .bi,
+     .Chk4 .custom-checkbox4 .bi,
+     .Chk5 .custom-checkbox5 .bi,
+     .Chk6 .custom-checkbox6 .bi {
+       color: gold;
+       position: absolute;
+       top: 0.4em;
+       left: -1.25em;
+       font-size: 0.75em;
+     }
+
+     .Chk1 .custom-checkbox1 .bi-bookmark-heart,
+     .Chk2 .custom-checkbox2 .bi-bookmark-heart,
+     .Chk3 .custom-checkbox3 .bi-bookmark-heart,
+     .Chk4 .custom-checkbox4 .bi-bookmark-heart,
+     .Chk5 .custom-checkbox5 .bi-bookmark-heart,
+     .Chk6 .custom-checkbox6 .bi-bookmark-heart {
+       color: gray;
+     }
+
+     .Chk1 .custom-checkbox1 .bi-bookmark-heart-fill,
+     .Chk2 .custom-checkbox2 .bi-bookmark-heart-fill,
+     .Chk3 .custom-checkbox3 .bi-bookmark-heart-fill,
+     .Chk4 .custom-checkbox4 .bi-bookmark-heart-fill,
+     .Chk5 .custom-checkbox5 .bi-bookmark-heart-fill,
+     .Chk6 .custom-checkbox6 .bi-bookmark-heart-fill {
+       opacity: 0;
+       transition: opacity 0.2s ease-in-out;
+     }
+
+     .Chk1 .custom-checkbox1:hover .bi-bookmark-heart-fill, 
+     .Chk2 .custom-checkbox2:hover .bi-bookmark-heart-fill,
+     .Chk3 .custom-checkbox3:hover .bi-bookmark-heart-fill,
+     .Chk4 .custom-checkbox4:hover .bi-bookmark-heart-fill,
+     .Chk5 .custom-checkbox5:hover .bi-bookmark-heart-fill,
+     .Chk6 .custom-checkbox6:hover .bi-bookmark-heart-fill {
+       opacity: 0.5;
+     }
+
+     .Chk1 .custom-checkbox1 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk2 .custom-checkbox2 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk3 .custom-checkbox3 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk4 .custom-checkbox4 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk5 .custom-checkbox5 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk6 .custom-checkbox6 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill {
+       opacity: 1;
+     }
+
+   </style>
+</head>
+  <body>
+    <!------------------------------- navbar ------------------------------->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary pt-4">
+      
+      <div class="container-fluid">
+          <a class="navbar-brand" href="home.html">
+          <img src="KK3.png" alt="Bootstrap" width="60" height="60"> KitchenKonnect
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Recipes
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Homebreakfast.html">Breakfast</a></li>
+                  <li><a class="dropdown-item" href="Homeappetizer.html">Appetizers</a></li>
+                  <li><a class="dropdown-item" href="HomeMainDish.html">Main Dishes</a></li>
+                  <li><a class="dropdown-item" href="HomeSoups.html">Soups & Stews</a></li>
+                  <li><a class="dropdown-item" href="Homevegan.html">Vegetarian</a></li>
+                  <li><a class="dropdown-item" href="Homedessert.html">Desserts</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ingredients
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Homechicken.html">Chicken</a></li>
+                  <li><a class="dropdown-item" href="Homepork.html">Pork</a></li>
+                  <li><a class="dropdown-item" href="Homebeef.html">Beef</a></li>
+                  <li><a class="dropdown-item" href="Homefish.html">Fish</a></li>
+                  <li><a class="dropdown-item" href="HomeVegetable.html">Vegetable</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="favorites.html">My Favorites</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#AboutUsModal">About Us</a>
+              </li>
+
+            </ul>
+            <form class="d-flex" role="search">
+              <div class="input-group mb-3 mt-3 me-2">
+                <span class="input-group-text bi bi-search rounded-start-pill icon" id="basic-addon1"></span>
+                <input type="text" class="form-control rounded-end-pill srchbar" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+              </div>
+            </form>
+
+            <div class="btn-group">
+              <button class="btn btn-light btn dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="bi bi-person-circle" id="basic-addon1"></span>
+                Stash Kobayashi
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#FeedbackModal">Feedback & Support</a></li>
+                <li><a class="dropdown-item" href="index.html">Logout</a></li>
+              </ul>
+            </div>
+            
+        </div>
+      </div>
+    </nav>
+    
+<!------------------------------- Recipe body ------------------------------->
+    <div class="container-fluid">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="home.html" class="text-decoration-none text-secondary">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Vegetable</li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col">
+          <p class="text-uppercase fs-2 fw-light">Vegetable Recipes</p>
+        </div>
+
+      </div>
+      
+      <div class="container">
+        <div class="row">         
+          <div class="col-lg-4 mt-4">
+            <div class="card">
+              <img src="tofu.jpg" class="card-img-top" alt="ArrozCaldo">
+              <div class="card-body">
+                <h5 class="card-title">Tofu Vegetable Stir Fry</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <a href="#" id="view" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#tofuModal">View Recipe</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4  mt-4">
+            <div class="card">
+              <img src="ampalaya.jpg" class="card-img-top" alt="ArrozCaldo">
+              <div class="card-body">
+                <h5 class="card-title">Ampalaya Salad</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <a href="#" id="view" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#AmpalayaModal">View Recipe</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4  mt-4">
+            <div class="card">
+              <img src="saging.jpg" class="card-img-top" alt="ArrozCaldo">
+              <div class="card-body">
+                <h5 class="card-title">Kilawing Puso ng Saging</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <a href="#" id="view" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#sagingModal">View Recipe</a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+<!------------------------------- Tofu Vegetable Stir Fry modal ------------------------------->
+<div class="modal fade" id="tofuModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">Crispy Cabbage Rolls</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="ingredient">
+        <img src="tofu.jpg" alt="" id="BFimg" class="mb-3">
+        <div class="row">
+          <div class="col pt-1">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="col d-flex justify-content-end Chk1">
+            <label for="id-of-input1" class="custom-checkbox1 FavLabel pt-0 mt-0">
+              <input type="checkbox" id="id-of-input1"/>
+              <i class="bi bi-bookmark-heart "></i>
+              <i class="bi bi-bookmark-heart-fill "></i>
+              <span>Favorite</span>
+            </label>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container-">
+          <h3 class="fw-bold">Tofu Vegetable Stir Fry</h3>
+          <p class="fst-italic">Made with slices of baby bok choy, carrots, onions, and the smooth, savory taste of soy sauce and sesame oil, this is a truly satisfying combination of great food.</p>
+          <label class="fw-bold">Recipe by: </label>
+          <label>Lorem Ipsum</label>
+          <br>
+              <ul>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Prep:</label> 10 minutes</li>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Cook:</label> 30 minutes</li>
+                <li><label class="fw-bold">Total:</label> 40 minutes</li>
+              </ul>
+          <hr>
+        </div>
+        
+        <p class="fs-4">Ingredients</p>
+          <form>
+            <ul>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu1" class="form-check-input chkbox"> <label for="tofu1" class="fst-normal text-black">½ head cabbage</label> (sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu2" class="form-check-input chkbox">  <label for="tofu2" class="fst-normal text-black">1 Knorr Chicken Cube</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu3" class="form-check-input chkbox">  <label for="tofu3" class="fst-normal text-black">1 bunch baby bok choy</label> (sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu4" class="form-check-input chkbox">  <label for="tofu4" class="fst-normal text-black">6 shiitake mushrooms</label> (sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu5" class="form-check-input chkbox">  <label for="tofu5" class="fst-normal text-black">15 snow peas</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu6" class="form-check-input chkbox">  <label for="tofu6" class="fst-normal text-black">12 oz. tofu</label> (extra firm, cubed)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu7" class="form-check-input chkbox">  <label for="tofu7" class="fst-normal text-black">¾ cups green peas</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu8" class="form-check-input chkbox">  <label for="tofu8" class="fst-normal text-black">1 carrot</label> (sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu9" class="form-check-input chkbox">  <label for="tofu9" class="fst-normal text-black">1 onion</label> (sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu10" class="form-check-input chkbox">  <label for="tofu10" class="fst-normal text-black">4 cloves garlic</label> (crushed)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu11" class="form-check-input chkbox">  <label for="tofu11" class="fst-normal text-black">2 tablespoons soy sauce</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu12" class="form-check-input chkbox">  <label for="tofu12" class="fst-normal text-black">2 teaspoons sesame oil</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu13" class="form-check-input chkbox">  <label for="tofu13" class="fst-normal text-black">1 tablespoon oyster sauce</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu14" class="form-check-input chkbox">  <label for="tofu14" class="fst-normal text-black">1 tablespoon cornstarch</label> (patis)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu15" class="form-check-input chkbox">  <label for="tofu15" class="fst-normal text-black">1 cup water</label> (patis)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu16" class="form-check-input chkbox">  <label for="tofu16" class="fst-normal text-black">1 cup cooking oil</label> (patis)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu17" class="form-check-input chkbox">  <label for="tofu17" class="fst-normal text-black">1/2 teaspoon sugar</label> (patis)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="tofu18" class="form-check-input chkbox">  <label for="tofu18" class="fst-normal text-black">Salt and ground black pepper to taste</label> (patis)</li>
+            </ul>
+        </form>
+        <hr>
+        <p class="fs-4 mt-0">Instructions</p>
+        <ol type="1">
+          <li>Heat 1 cup of oil in a small cooking pot. Deep fry the tofu until it turns golden brown. Set aside.</li>
+          <li>Heat 3 tablespoons of the same oil in a wok. Sauté onion and garlic.</li>
+          <li>Add mushrooms and carrot once the onion softens.</li>
+          <li>Pour the soy sauce. Sauté for 2 minutes.</li>
+          <li>Add snow peas, Knorr Chicken Cube, and water. Let boil.</li>
+          <li>Put the oyster sauce along with the cabbage, bok choy, and green peas into the wok. Toss. Cover. Cook for 3 minutes.</li>
+          <li>Add the fried tofu and season with sugar, salt, and ground black pepper.</li>
+          <li>Combine cornstarch with 3 tablespoons water. Mix well and then pour into the wok. Stir and continue cooking until the sauce thickens.</li>
+          <li>Finish by adding sesame oil.</li>
+          <li>Transfer to a serving bowl. Serve with rice.</li>
+          <li>Share and enjoy!</li>
+        </ol>
+
+        <hr>
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+          <!-- star rating -->
+          <form class="needs-validation" novalidate>
+            <div class="rating-box mb-0">
+              <div class="stars pb-0 bg-body-secondary">
+                <p class="fs-5 pb-0">Recipe Rating: </p>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>    
+              <hr>
+            </div>
+            
+            <!-- comment section -->
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;" required></textarea>
+              <label for="comments">Comment</label>
+              <div class="invalid-tooltip">
+                Invalid!
+              </div>
+        
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="form-control btn btn-secondary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+    
+<!------------------------------- Ampalaya Salad Recipe modal ------------------------------->
+<div class="modal fade" id="AmpalayaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">Ampalaya Salad</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="ingredient">
+        <img src="ampalaya.jpg" alt="" id="BFimg" class="mb-3">
+        <div class="row">
+          <div class="col pt-1">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="col d-flex justify-content-end Chk2">
+            <label for="id-of-input2" class="custom-checkbox2 FavLabel pt-0 mt-0">
+              <input type="checkbox" id="id-of-input2"/>
+              <i class="bi bi-bookmark-heart "></i>
+              <i class="bi bi-bookmark-heart-fill "></i>
+              <span>Favorite</span>
+            </label>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container-">
+          <h3 class="fw-bold">Ampalaya Salad</h3>
+          <p class="fst-italic">This is a recipe for ampalaya salad or bitter gourd salad.It is alaso known as ensaladang ampalaya.</p>
+          <label class="fw-bold">Recipe by: </label>
+          <label>Lorem Ipsum</label>
+          <br>
+              <ul>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Prep:</label> 30 minutes</li>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Cook:</label> 1 minute</li>
+                <li><label class="fw-bold">Total:</label> 31 minutes</li>
+              </ul>
+          <hr>
+        </div>
+        
+        <p class="fs-4">Ingredients</p>
+          <form>
+            <ul>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="salad1" class="form-check-input chkbox"> <label for="salad1" class="fst-normal text-black">1 medium bitter gourd</label> (ampalaya, thinly sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="salad2" class="form-check-input chkbox">  <label for="salad2" class="fst-normal text-black">1 medium red onion</label> (thinly sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="salad3" class="form-check-input chkbox">  <label for="salad3" class="fst-normal text-black">1 medium Roma tomato</label> (diced and seeds removed)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="salad4" class="form-check-input chkbox">  <label for="salad4" class="fst-normal text-black">1/2 cup vinegar</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="salad5" class="form-check-input chkbox">  <label for="salad5" class="fst-normal text-black">1/2 teaspoon ground black peppert</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="salad6" class="form-check-input chkbox">  <label for="salad6" class="fst-normal text-black">1 teaspoon granulated white sugar</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="salad7" class="form-check-input chkbox">  <label for="salad7" class="fst-normal text-black">1 tablespoon salt</label> (for rubbing)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="salad8" class="form-check-input chkbox">  <label for="salad8" class="fst-normal text-black">Extra salt to taste</label></li>
+            </ul>
+        </form>
+        <hr>
+        <p class="fs-4 mt-0">Instructions</p>
+        <ol type="1">
+          <li>Rub the salt all over the sliced bitter gourd. Let it stay for 30 minutes.</li>
+          <li>Remove the salt by quickly washing the gourd with running water. Drain the excess liquid.</li>
+          <li>Combine vinegar, ground black pepper, sugar, and extra salt (if needed) in a bowl. Stir.</li>
+          <li>Put-in the bitter gourd, onion, and tomato in a bowl. Mix well.</li>
+          <li>Cover the bowl with a cling wrap and then refrigerate for about 3 hours.</li>
+          <li>Serve as a side dish for fried fish.</li>
+          <li>Share and enjoy!</li>
+        </ol>
+
+        <hr>
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+          <!-- star rating -->
+          <form class="needs-validation" novalidate>
+            <div class="rating-box mb-0">
+              <div class="stars pb-0 bg-body-secondary">
+                <p class="fs-5 pb-0">Recipe Rating: </p>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>    
+              <hr>
+            </div>
+            
+            <!-- comment section -->
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;"></textarea>
+              <label for="comments">Comment</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="form-control btn btn-secondary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- PusoNgSaging modal ------------------------------->
+ <div class="modal fade" id="sagingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel" >Kilawing Puso ng Saging</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="ingredient">
+        <img src="saging.jpg" alt="" id="BFimg" class="mb-3">
+        <div class="row">
+          <div class="col pt-1">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="col d-flex justify-content-end Chk3">
+            <label for="id-of-input3" class="custom-checkbox3 FavLabel pt-0 mt-0">
+              <input type="checkbox" id="id-of-input3"/>
+              <i class="bi bi-bookmark-heart "></i>
+              <i class="bi bi-bookmark-heart-fill "></i>
+              <span>Favorite</span>
+            </label>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container-">
+          <h3 class="fw-bold">Kilawing Puso ng Saging</h3>
+          <p class="fst-italic">Kilawing Puso ng Saging is a Filipino recipe involving banana blossoms. This is considered as a vegetable dish wherein the blossoms are sauteed with garlic and onion and cooked in vinegar.</p>
+          <label class="fw-bold">Recipe by: </label>
+          <label>Lorem Ipsum</label>
+          <br>
+              <ul>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Prep:</label> 10 minutes</li>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Cook:</label> 30 minutes</li>
+                <li><label class="fw-bold">Total:</label> 40 minutes</li>
+              </ul>
+          <hr>
+        </div>
+        
+        <p class="fs-4">Ingredients</p>
+          <form>
+            <ul>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging1" class="form-check-input chkbox"> <label for="saging1" class="fst-normal text-black">2 to 3 cups chopped banana blossoms</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging2" class="form-check-input chkbox">  <label for="saging2" class="fst-normal text-black">1 tablespoon minced garlic</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging3" class="form-check-input chkbox">  <label for="saging3" class="fst-normal text-black">1 medium yellow onion</label> (sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging4" class="form-check-input chkbox">  <label for="saging4" class="fst-normal text-black">6 tablespoons cane vinegar</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging5" class="form-check-input chkbox">  <label for="saging5" class="fst-normal text-black">3 pieces long green chili pepper</label> (sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging6" class="form-check-input chkbox">  <label for="saging6" class="fst-normal text-black">2 tablespoons fish sauce</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging7" class="form-check-input chkbox">  <label for="saging7" class="fst-normal text-black">1/4 teaspoon ground black pepper</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging8" class="form-check-input chkbox">  <label for="saging8" class="fst-normal text-black">3/4 cup vegetable broth</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging9" class="form-check-input chkbox">  <label for="saging9" class="fst-normal text-black">Brine: 6 cups of water combined with 5 tablespoons salt</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="saging10" class="form-check-input chkbox">  <label for="saging10" class="fst-normal text-black">2 tablespoons cooking oil</label></li>
+            </ul>
+        </form>
+        <hr>
+        <p class="fs-4 mt-0">Instructions</p>
+        <ol type="1">
+          <li>Soak the chopped banana blossoms in the bowl with brine for 15 to 20 minutes. 
+              After soaking, squeeze tightly to release the sap from the banana blossoms. 
+              Place in a colander to drain the water. Set aside.</li>
+          <li>Heat the cooking oil in a pan.</li>
+          <li>Saute the garlic and onion.</li>
+          <li>Add the banana blossoms. Cook for 5 minutes.</li>
+          <li>Pour-in the fish sauce and vegetable broth, Stir and let boil.</li>
+          <li>Pour-in the vinegar. Allow to re-boil, cover, and simmer for 10 to 15 minutes.</li>
+          <li>Add the green chili and ground black pepper.Stir and continue to cook for 5 minutes.</li>
+          <li>Turn-off the heat and transfer to a serving plate.</li>
+          <li>Serve. Share and enjoy!</li>
+        </ol>
+
+        <hr>
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+          <!-- star rating -->
+          <form class="needs-validation" novalidate>
+            <div class="rating-box mb-0">
+              <div class="stars pb-0 bg-body-secondary">
+                <p class="fs-5 pb-0">Recipe Rating: </p>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>    
+              <hr>
+            </div>
+            
+            <!-- comment section -->
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;"></textarea>
+              <label for="comments">Comment</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-secondary form-control">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- Feedback modal ------------------------------->
+ <div class="modal fade" id="FeedbackModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel" >Feedback</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="feedback">
+
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+                     
+            <!-- comment section -->
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;"></textarea>
+              <label for="comments">Comment</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-secondary form-control">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- Footer ------------------------------->
+<div class="container-fluid mt-5 pt-5">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 KitchenKonnect.</p>
+
+    <a href="home.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <img src="KK3.png" alt="Bootstrap" width="60" height="60">
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal" data-bs-target="#ContactUsModal">Contact Us</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal" data-bs-target="#TermsModal">Terms of Service</a></li>
+    </ul>
+  </footer>
+</div>
+
+<!------------------------------- about us modal ------------------------------->
+<div class="modal fade" id="AboutUsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">KitchenKonnect</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="about">
+          <div class="container">
+            <h1 class="pb-2">About Us</h1>
+            <p>Welcome to KitchenKonnect, your ultimate destination for discovering and sharing delicious recipes from around the world. 
+              We are passionate about bringing food enthusiasts together and helping them explore the joys of cooking and sharing meals.     
+              At KitchenKonnect, we believe that cooking is a creative and joyful experience that connects people across cultures. 
+              Our platform is designed to empower home cooks, food bloggers, and professional chefs alike to showcase their culinary talents, 
+              share their favorite recipes, and inspire others in the kitchen. Whether you're a seasoned cook or just starting your culinary journey, 
+              KitchenKonnect is here to provide a wide range of recipes, cooking tips, meal plans, and a vibrant community that supports and encourages your love for food.</p>
+              Join our community today and embark on a delicious adventure!</p>
+          </div>
+      </div>
+        
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- contact us modal ------------------------------->
+<div class="modal fade" id="ContactUsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+      <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">KitchenKonnect</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    
+    <div class="modal-body" id="about">
+
+      <main>
+        <div class="contact-us container">
+          <h2>Contact Us</h2>
+          <p>We would love to hear from you! If you have any questions, suggestions, or feedback, please feel free to reach out to us.</p>
+          <div class="contact-details">
+            <div class="contact-info">
+              <h3>Email</h3>
+              <p><a href="mailto:info@kitchenkonnect.com">info@kitchenkonnect.com</a></p>
+            </div>
+            <div class="contact-info">
+              <h3>Phone</h3>
+              <p>+1-123-456-7890</p>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3>Send us a message</h3>
+            <form>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-control" required></textarea>
+              <button type="submit" class="btn btn-secondary form-control mt-3">Send</button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+    </div>
+      
+
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<!------------------------------- Terms modal ------------------------------->
+<div class="modal fade" id="TermsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+      <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">KitchenKonnect</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    
+    <div class="modal-body" id="contactUs">
+
+        <div class="container">
+          <h1>Terms of Service</h1>
+    <p>Please read these terms of service carefully before using our website.</p>
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using KitchenKonnect, you agree to be bound by these terms of service, our privacy policy, and any additional terms and conditions that may apply to specific sections of our website or services.</p>
+    <h2>2. User Conduct</h2>
+    <p>You are solely responsible for any content you post or contribute to KitchenKonnect. You agree not to engage in any of the following activities:</p>
+    <ul>
+      <li>Violating any applicable laws or regulations</li>
+      <li>Posting or sharing inappropriate, offensive, or harmful content</li>
+      <li>Impersonating any person or entity</li>
+      <li>Interfering with or disrupting the operation of the website</li>
+      <li>Attempting to gain unauthorized access to any part of the website</li>
+    </ul>
+    <h2>3. Intellectual Property</h2>
+    <p>All content on KitchenKonnect, including recipes, images, logos, and trademarks, is protected by intellectual property laws. You may not use, reproduce, or distribute any content from the website without prior written permission.</p>
+    <h2>4. Limitation of Liability</h2>
+    <p>KitchenKonnect and its owners will not be liable for any direct, indirect, incidental, consequential, or exemplary damages arising from the use or inability to use the website or its content.</p>
+    <h2>5. Modifications to Terms</h2>
+    <p>We reserve the right to modify or update these terms of service at any time without prior notice. It is your responsibility to review the terms periodically for any changes.</p>
+
+        </div>
+
+    </div>
+      
+
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+</div>
+</div>
+  
+  <!------------------------------- Scripts ------------------------------->
+  <script>
+  // ------------------------------- star transition script -------------------------------
+    const stars = document.querySelectorAll(".stars i");
+    stars.forEach((star, index1) =>{
+      star.addEventListener("click", () => {
+        stars.forEach((star, index2) => {
+          index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+        })
+      })
+    })
+  </script>
+  </body>
+</html>

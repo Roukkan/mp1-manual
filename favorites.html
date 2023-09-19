@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>KitchenKonnect</title>
+
+    <link rel="icon" type="image/x-icon" href="kk3_lMv_icon.ico">
+
+    <style>
+      /* arroz caldo fav button     */
+     .Chk1 .FavLabel,
+     .Chk2 .FavLabel, 
+     .Chk3 .FavLabel, 
+     .Chk4 .FavLabel, 
+     .Chk5 .FavLabel, 
+     .Chk6 .FavLabel {
+       /* Presentation */
+       font-size: 25px
+     }
+
+     /* Required Styling */
+
+     .Chk1 .FavLabel input[type="checkbox"],
+     .Chk2 .FavLabel input[type="checkbox"],
+     .Chk3 .FavLabel input[type="checkbox"],
+     .Chk4 .FavLabel input[type="checkbox"],
+     .Chk5 .FavLabel input[type="checkbox"],
+     .Chk6 .FavLabel input[type="checkbox"] {
+       display: none;
+     }
+
+     .Chk1 .custom-checkbox1,
+     .Chk2 .custom-checkbox2,
+     .Chk3 .custom-checkbox3,
+     .Chk4 .custom-checkbox4,
+     .Chk5 .custom-checkbox5,
+     .Chk6 .custom-checkbox6 {
+       margin-left: 2em;
+       position: relative;
+       cursor: pointer;
+     }
+
+     .Chk1 .custom-checkbox1 .bi,
+     .Chk2 .custom-checkbox2 .bi,
+     .Chk3 .custom-checkbox3 .bi,
+     .Chk4 .custom-checkbox4 .bi,
+     .Chk5 .custom-checkbox5 .bi,
+     .Chk6 .custom-checkbox6 .bi {
+       color: gold;
+       position: absolute;
+       top: 0.4em;
+       left: -1.25em;
+       font-size: 0.75em;
+     }
+
+     .Chk1 .custom-checkbox1 .bi-bookmark-heart,
+     .Chk2 .custom-checkbox2 .bi-bookmark-heart,
+     .Chk3 .custom-checkbox3 .bi-bookmark-heart,
+     .Chk4 .custom-checkbox4 .bi-bookmark-heart,
+     .Chk5 .custom-checkbox5 .bi-bookmark-heart,
+     .Chk6 .custom-checkbox6 .bi-bookmark-heart {
+       color: gray;
+     }
+
+     .Chk1 .custom-checkbox1 .bi-bookmark-heart-fill,
+     .Chk2 .custom-checkbox2 .bi-bookmark-heart-fill,
+     .Chk3 .custom-checkbox3 .bi-bookmark-heart-fill,
+     .Chk4 .custom-checkbox4 .bi-bookmark-heart-fill,
+     .Chk5 .custom-checkbox5 .bi-bookmark-heart-fill,
+     .Chk6 .custom-checkbox6 .bi-bookmark-heart-fill {
+       opacity: 0;
+       transition: opacity 0.2s ease-in-out;
+     }
+
+     .Chk1 .custom-checkbox1:hover .bi-bookmark-heart-fill, 
+     .Chk2 .custom-checkbox2:hover .bi-bookmark-heart-fill,
+     .Chk3 .custom-checkbox3:hover .bi-bookmark-heart-fill,
+     .Chk4 .custom-checkbox4:hover .bi-bookmark-heart-fill,
+     .Chk5 .custom-checkbox5:hover .bi-bookmark-heart-fill,
+     .Chk6 .custom-checkbox6:hover .bi-bookmark-heart-fill {
+       opacity: 0.5;
+     }
+
+     .Chk1 .custom-checkbox1 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk2 .custom-checkbox2 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk3 .custom-checkbox3 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk4 .custom-checkbox4 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk5 .custom-checkbox5 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill,
+     .Chk6 .custom-checkbox6 input[type="checkbox"]:checked ~ .bi-bookmark-heart-fill {
+       opacity: 1;
+     }
+
+   </style>
+</head>
+  <body>
+    <!------------------------------- navbar ------------------------------->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary pt-4">
+      
+      <div class="container-fluid">
+          <a class="navbar-brand" href="home.html">
+          <img src="KK3.png" alt="Bootstrap" width="60" height="60"> KitchenKonnect
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Recipes
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Homebreakfast.html">Breakfast</a></li>
+                  <li><a class="dropdown-item" href="Homeappetizer.html">Appetizers</a></li>
+                  <li><a class="dropdown-item" href="HomeMainDish.html">Main Dishes</a></li>
+                  <li><a class="dropdown-item" href="HomeSoups.html">Soups & Stews</a></li>
+                  <li><a class="dropdown-item" href="Homevegan.html">Vegetarian</a></li>
+                  <li><a class="dropdown-item" href="Homedessert.html">Desserts</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ingredients
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Homechicken.html">Chicken</a></li>
+                  <li><a class="dropdown-item" href="Homepork.html">Pork</a></li>
+                  <li><a class="dropdown-item" href="Homebeef.html">Beef</a></li>
+                  <li><a class="dropdown-item" href="Homefish.html">Fish</a></li>
+                  <li><a class="dropdown-item" href="HomeVegetable.html">Vegetable</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="favorites.html">My Favorites</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#AboutUsModal">About Us</a>
+              </li>
+
+            </ul>
+            <form class="d-flex" role="search">
+              <div class="input-group mb-3 mt-3 me-2">
+                <span class="input-group-text bi bi-search rounded-start-pill icon" id="basic-addon1"></span>
+                <input type="text" class="form-control rounded-end-pill srchbar" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+              </div>
+            </form>
+       
+            <div class="btn-group">
+              <button class="btn btn-light btn dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="bi bi-person-circle" id="basic-addon1"></span>
+                Stash Kobayashi
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#FeedbackModal">Feedback & Support</a></li>
+                <li><a class="dropdown-item" href="index.html">Logout</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </nav>
+    
+    <!------------------------------- Recipe body ------------------------------->
+    <div class="container-fluid">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="home.html" class="text-decoration-none text-secondary">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">My Favorites</li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col">
+          <p class="text-uppercase fs-2 fw-light">Favorite Recipes</p>
+        </div>
+        <div class="col d-flex justify-content-end h-75">
+          <button class="form-control rounded-pill addBtn pt-1 pb-1" style="width:fit-content;" data-bs-toggle="modal" data-bs-target="#AddRecipe">+ Add Recipe</button>
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="row">         
+          <div class="col-lg-4  mt-4">
+            <div class="card">
+              <img src="adobo.jpg" class="card-img-top" alt="ArrozCaldo">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="card-title">Pork Adobo</h5>
+                  </div>
+                  <div class="col d-flex justify-content-end pt-0 mt-0">
+                    
+                  </div>
+                </div>
+                
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <a href="#" id="view" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#AdoboModal">View Recipe</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4  mt-4">
+            <div class="card">
+              <img src="longsilog.jpg" class="card-img-top" alt="ArrozCaldo">
+              <div class="card-body">
+                <h5 class="card-title">Longsilog</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star-o"></span>
+                <a href="#" id="view" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#silogModal">View Recipe</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4">
+            <div class="card">
+              <img src="gising.jpg" class="card-img-top" alt="ArrozCaldo">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Gising-gising</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <a href="#" id="view" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#gisingModal">View Recipe</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4">
+            <div class="card">
+              <img src="karekare.jpg" class="card-img-top" alt="ArrozCaldo">
+              <div class="card-body">
+                <h5 class="card-title">Kare Kare</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <a href="#" id="view" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#karekareModal">View Recipe</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4  mt-4">
+            <div class="card">
+              <img src="dynamiteLumpia.jpg" class="card-img-top" alt="ArrozCaldo">
+              <div class="card-body">
+                <h5 class="card-title">Dynamite Lumpia</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <a href="#" id="view" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#DynamiteModal">View Recipe</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4  mt-4">
+            <div class="card">
+              <img src="leche-flan.jpg" class="card-img-top" alt="ArrozCaldo">
+              <div class="card-body">
+                <h5 class="card-title">Leche Flan</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <a href="#" id="view" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#FlanModal">View Recipe</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!------------------------------- adobo modal ------------------------------->
+<div class="modal fade" id="AdoboModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">Pork Adobo</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="ingredient">
+        <img src="adobo.jpg" alt="" id="BFimg" class="mb-3">
+        <div class="row">
+          <div class="col pt-1">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="col d-flex justify-content-end Chk1">
+            <label for="id-of-input1" class="custom-checkbox1 FavLabel pt-0 mt-0">
+              <input type="checkbox" id="id-of-input1" checked/>
+              <i class="bi bi-bookmark-heart "></i>
+              <i class="bi bi-bookmark-heart-fill "></i>
+              <span>Favorite</span>
+            </label>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container-">
+          <h3 class="fw-bold">Pork Adobo</h3>
+          <p class="fst-italic">Basic Filipino Pork Adobo with Soy Sauce, Vinegar, and Garlic. This delicious dish is perfect when served over newly cooked white rice.  </p>
+          <label class="fw-bold">Recipe by: </label>
+          <label>Lorem Ipsum</label>
+          <br>
+              <ul>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Prep:</label> 10 minutes</li>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Cook:</label> 1 hour</li>
+                <li><label class="fw-bold">Total:</label> 1 hour 10 minutes</li>
+              </ul>
+          <hr>
+        </div>
+        
+        <p class="fs-4">Ingredients</p>
+          <form>
+            <ul>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="adobo1" class="form-check-input chkbox"> <label for="adobo1" class="fst-normal text-black">2 lbs pork belly</label> (cut into serving pieces)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="adobo2" class="form-check-input chkbox">  <label for="adobo2" class="fst-normal text-black">2 tablespoons garlic</label> (chopped)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="adobo3" class="form-check-input chkbox">  <label for="adobo3" class="fst-normal text-black">5 dried bay leaves</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="adobo4" class="form-check-input chkbox">  <label for="adobo4" class="fst-normal text-black">4 tablespoons vinegar</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="adobo5" class="form-check-input chkbox">  <label for="adobo5" class="fst-normal text-black">1/2 cup soy sauce</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="adobo6" class="form-check-input chkbox">  <label for="adobo6" class="fst-normal text-black">1 tablespoon peppercorn</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="adobo7" class="form-check-input chkbox">  <label for="adobo7" class="fst-normal text-black">2 cups water</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="adobo8" class="form-check-input chkbox">  <label for="adobo8" class="fst-normal text-black">Salt to taste</label></li>
+            </ul>
+        </form>
+        <hr>
+        <p class="fs-4 mt-0">Instructions</p>
+        <ol type="1">
+          <li>Combine the pork belly, soy sauce, and garlic then marinade for at least 1 hour.</li>
+          <li>Heat the pot and put-in the marinated pork belly then cook for a few minutes.</li>
+          <li>Pour remaining marinade including garlic.</li>
+          <li>Add water, whole pepper corn, and dried bay leaves then bring to a boil. Simmer for 40 minutes to 1 hour.</li>
+          <li>Put-in the vinegar and simmer for 12 to 15 minutes.</li>
+          <li>Add salt to taste.</li>
+          <li>Serve hot. Share and enjoy!</li>
+        </ol>
+
+        <hr>
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+          <!-- star rating -->
+          <form class="needs-validation" novalidate>
+            <div class="rating-box mb-0">
+              <div class="stars pb-0 bg-body-secondary">
+                <p class="fs-5 pb-0">Recipe Rating: </p>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>    
+              <hr>
+            </div>
+            
+            <!-- comment section -->
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;"></textarea>
+              <label for="comments">Comment</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="form-control btn btn-secondary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!------------------------------- longsilog modal ------------------------------->
+ <div class="modal fade" id="silogModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel" >Longislog</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="ingredient">
+        <img src="longsilog.jpg" alt="" id="BFimg" class="mb-3">
+        <div class="row">
+          <div class="col pt-1">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="col d-flex justify-content-end Chk2">
+            <label for="id-of-input2" class="custom-checkbox2 FavLabel pt-0 mt-0">
+              <input type="checkbox" id="id-of-input2" checked/>
+              <i class="bi bi-bookmark-heart "></i>
+              <i class="bi bi-bookmark-heart-fill "></i>
+              <span>Favorite</span>
+            </label>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container-">
+          <h3 class="fw-bold">How to Cook Longsilog</h3>
+          <p class="fst-italic">Filipino sweet sausage with garlic fried rice and fried egg. This complete meal is perfect for breakfast.</p>
+          <label class="fw-bold">Recipe by: </label>
+          <label>Lorem Ipsum</label>
+          <br>
+              <ul>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Prep:</label> 5 minutes</li>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Cook:</label> 15 minutes</li>
+                <li><label class="fw-bold">Total:</label> 20 minutes</li>
+              </ul>
+          <hr>
+        </div>
+        
+        <p class="fs-4">Ingredients</p>
+          <form>
+            <ul>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="long1" class="form-check-input chkbox"> <label for="long1" class="fst-normal text-black">1/2 lb. skinless longanisa</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="long2" class="form-check-input chkbox">  <label for="long2" class="fst-normal text-black">2 pieces eggs</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="long3" class="form-check-input chkbox">  <label for="long3" class="fst-normal text-black">4 cups rice</label> (leftover)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="long4" class="form-check-input chkbox">  <label for="long4" class="fst-normal text-black">5 cloves garlic</label> (crushed)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="long5" class="form-check-input chkbox">  <label for="long5" class="fst-normal text-black">1/2 cup water</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="long6" class="form-check-input chkbox">  <label for="long6" class="fst-normal text-black">4 tablespoons cooking oil</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="long7" class="form-check-input chkbox">  <label for="long7" class="fst-normal text-black">Salt and ground black pepper to taste</label></li>
+            </ul>
+        </form>
+        <hr>
+        <p class="fs-4 mt-0">Instructions</p>
+        <ol type="1">
+          <li>Heat 2 tablespoons of oil in a pan. Once the oil gets hot, fry the eggs. Remove from the pan. Set aside.</li>
+          <li>Add remaining oil in the pan. Fry the longanisa until the outer part turns light brown (around 1 1/2 minutes).</li>
+          <li>Pour-in water. Let boil. Continue boiling until the water evaporates. Fry the longanisa in remaining oil until fully cooked. 
+              Remove from the pan and set aside.</li>
+          <li>Using the remaining oil, cook garlic until it starts to turn light brown.</li>
+          <li>Add rice. Stir-fry for 3 minutes. Season with salt and ground black pepper.</li>
+          <li>Assemble the fried eggs, longanisa, and sinangag on a plate. Serve with spicy vinegar as a dipping sauce for the longanisa.</li>
+          <li>Share and enjoy!</li>
+        </ol>
+
+        <hr>
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+          <!-- star rating -->
+          <form class="needs-validation" novalidate>
+            <div class="rating-box mb-0">
+              <div class="stars pb-0 bg-body-secondary">
+                <p class="fs-5 pb-0">Recipe Rating: </p>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>    
+              <hr>
+            </div>
+            
+            <!-- comment section -->
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;"></textarea>
+              <label for="comments">Comment</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-secondary form-control">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!------------------------------- gising-gising modal ------------------------------->
+ <div class="modal fade" id="gisingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">Crispy Cabbage Rolls</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="ingredient">
+        <img src="gising.jpg" alt="" id="BFimg" class="mb-3">
+        <div class="row">
+          <div class="col pt-1">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="col d-flex justify-content-end Chk3">
+            <label for="id-of-input3" class="custom-checkbox3 FavLabel pt-0 mt-0">
+              <input type="checkbox" id="id-of-input3" checked/>
+              <i class="bi bi-bookmark-heart "></i>
+              <i class="bi bi-bookmark-heart-fill "></i>
+              <span>Favorite</span>
+            </label>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container-">
+          <h3 class="fw-bold">Chicken Gising-gising</h3>
+          <p class="fst-italic">Spicy chicken stew wherein chicken pieces are cooked with winged beans and coconut milk</p>
+          <label class="fw-bold">Recipe by: </label>
+          <label>Lorem Ipsum</label>
+          <br>
+              <ul>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Prep:</label> 10 minutes</li>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Cook:</label> 35 minutes</li>
+                <li><label class="fw-bold">Total:</label> 45 minutes</li>
+              </ul>
+          <hr>
+        </div>
+        
+        <p class="fs-4">Ingredients</p>
+          <form>
+            <ul>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising1" class="form-check-input chkbox"> <label for="gising1" class="fst-normal text-black">2 lbs. chicken </label> (cut into serving pieces)</li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising2" class="form-check-input chkbox">  <label for="gising2" class="fst-normal text-black">90 grams Knorr Ginataang Gulay Mix</label></li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising3" class="form-check-input chkbox">  <label for="gising3" class="fst-normal text-black">½ lb. winged bean</label> (sigarilyas, sliced)</li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising4" class="form-check-input chkbox">  <label for="gising4" class="fst-normal text-black">2 long green chili pepper</label> (sliced)</li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising5" class="form-check-input chkbox">  <label for="gising5" class="fst-normal text-black">5 Thai chili pepper</label> (optional)</li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising6" class="form-check-input chkbox">  <label for="gising6" class="fst-normal text-black">1 tablespoon shrimp paste</label></li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising7" class="form-check-input chkbox">  <label for="gising7" class="fst-normal text-black">3 cups water</label></li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising8" class="form-check-input chkbox">  <label for="gising8" class="fst-normal text-black">1 onion</label> (chopped)</li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising9" class="form-check-input chkbox">  <label for="gising9" class="fst-normal text-black">5 cloves garlic</label> (chopped)</li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising10" class="form-check-input chkbox">  <label for="gising10" class="fst-normal text-black">2 thumbs ginger</label> (chopped)</li>
+              <li class="fst-italic text-secondary"><input type="checkbox" value="" id="gising11" class="form-check-input chkbox">  <label for="gising11" class="fst-normal text-black">3 tablespoons cooking oil</label></li>
+            </ul>
+        </form>
+        <hr>
+        <p class="fs-4 mt-0">Instructions</p>
+        <ol type="1">
+          <li>Heat oil in a pan. Sauté garlic, onion, and ginger.</li>
+          <li>Add chicken pieces. Stir fry until the exterior turns light brown in color.</li>
+          <li>Add 1 cup water. Let boil.</li>
+          <li>Combine Knorr Ginataang Gulay Mix with 2 cups water. Mix well and then pour into the pan. 
+              Cover and continue cooking between low to medium heat setting for 20 minutes.</li>
+          <li>Add shrimp paste, long green pepper, and winged beans. Cover the pan and continue cooking for 5 minutes.</li>
+          <li>Add Thai chili peppers if desired. Cook for 2 minutes more.</li>
+          <li>Transfer to a serving bowl. Serve hot with rice.</li>
+          <li>Share and enjoy!</li>
+        </ol>
+
+        <hr>
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+          <!-- star rating -->
+          <form class="needs-validation" novalidate>
+            <div class="rating-box mb-0">
+              <div class="stars pb-0 bg-body-secondary">
+                <p class="fs-5 pb-0">Recipe Rating: </p>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>    
+              <hr>
+            </div>
+            
+            <!-- comment section -->
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;" required></textarea>
+              <label for="comments">Comment</label>
+              <div class="invalid-tooltip">
+                Invalid!
+              </div>
+        
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="form-control btn btn-secondary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- karekare modal ------------------------------->
+<div class="modal fade" id="karekareModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">Kare Kare</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="ingredient">
+        <img src="karekare.jpg" alt="" id="BFimg" class="mb-3">
+        <div class="row">
+          <div class="col pt-1">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="col d-flex justify-content-end Chk4">
+            <label for="id-of-input4" class="custom-checkbox4 FavLabel pt-0 mt-0">
+              <input type="checkbox" id="id-of-input4" checked/>
+              <i class="bi bi-bookmark-heart "></i>
+              <i class="bi bi-bookmark-heart-fill "></i>
+              <span>Favorite</span>
+            </label>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container-">
+          <h3 class="fw-bold">Kare Kare</h3>
+          <p class="fst-italic">This is a recipe for Kare-kare or ox tripe stew</p>
+          <label class="fw-bold">Recipe by: </label>
+          <label>Lorem Ipsum</label>
+          <br>
+              <ul>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Prep:</label> 10 minutes</li>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Cook:</label> 1 hour</li>
+                <li><label class="fw-bold">Total:</label> 1 hour 10 minutes</li>
+              </ul>
+          <hr>
+        </div>
+        
+        <p class="fs-4">Ingredients</p>
+          <form>
+            <ul>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare1" class="form-check-input chkbox">  <label for="kare1" class="fst-normal text-black">3 lbs oxtail</label> (cut in 2 inch slices you an also use tripe or beef slices)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare2" class="form-check-input chkbox">  <label for="kare2" class="fst-normal text-black">1 piece small banana flower bud</label> (sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare3" class="form-check-input chkbox">  <label for="kare3" class="fst-normal text-black">1 bundle pechay or bok choy</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare4" class="form-check-input chkbox">  <label for="kare4" class="fst-normal text-black">1 bundle string beans</label> (cut into 2 inch slices)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare5" class="form-check-input chkbox">  <label for="kare5" class="fst-normal text-black">4 pieces eggplants</label> (sliced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare6" class="form-check-input chkbox">  <label for="kare6" class="fst-normal text-black">1 cup ground peanuts</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare7" class="form-check-input chkbox">  <label for="kare7" class="fst-normal text-black">1/2 cup peanut butter</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare8" class="form-check-input chkbox">  <label for="kare8" class="fst-normal text-black">1/2 cup shrimp paste</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare9" class="form-check-input chkbox">  <label for="kare9" class="fst-normal text-black">34 Ounces water</label> (about 1 Liter)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare10" class="form-check-input chkbox">  <label for="kare10" class="fst-normal text-black">1/2 cup annatto seeds</label> (soaked in a cup of water)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare11" class="form-check-input chkbox">  <label for="kare11" class="fst-normal text-black">1/2 cup toasted ground rice</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare12" class="form-check-input chkbox">  <label for="kare12" class="fst-normal text-black">1 tbsp garlic</label> (minced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare13" class="form-check-input chkbox">  <label for="kare13" class="fst-normal text-black">1 piece onion</label> (chopped)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="kare14" class="form-check-input chkbox">  <label for="kare14" class="fst-normal text-black">salt and pepper</label></li>
+            </ul>
+        </form>
+        <hr>
+        <p class="fs-4 mt-0">Instructions</p>
+        <ol type="1">
+          <li>In a large pot, bring the water to a boil</li>
+          <li>Put in the oxtail followed by the onions and simmer for 2.5 to 3 hrs or until tender (35 minutes if using a pressure cooker)</li>
+          <li>Once the meat is tender, add the ground peanuts, peanut butter, and coloring (water from the annatto seed mixture) and simmer for 5 to 7 minutes</li>
+          <li>Add the toasted ground rice and simmer for 5 minutes</li>
+          <li>On a separate pan, saute the garlic then add the banana flower, eggplant, and string beans and cook for 5 minutes</li>
+          <li>Transfer the cooked vegetables to the large pot (where the rest of the ingredients are)</li>
+          <li>Add salt and pepper to taste</li>
+          <li>Serve hot with shrimp paste. Enjoy!</li>
+          
+        </ol>
+
+        <hr>
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+          <!-- star rating -->
+
+            <div class="rating-box mb-0">
+              <div class="stars pb-0 bg-body-secondary">
+                <p class="fs-5 pb-0">Recipe Rating: </p>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>    
+              <hr>
+            </div>
+            
+            <!-- comment section -->
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;" required></textarea>
+              <label for="comments">Comment</label>
+              <div class="invalid-tooltip">
+                Invalid!
+              </div>
+        
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="form-control btn btn-secondary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- Dynamite modal ------------------------------->
+<div class="modal fade" id="DynamiteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">Dynamite Lumpia</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="ingredient">
+        <img src="dynamiteLumpia.jpg" alt="" id="BFimg" class="mb-3">
+        <div class="row">
+          <div class="col pt-1">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <div class="col d-flex justify-content-end Chk5">
+            <label for="id-of-input5" class="custom-checkbox5 FavLabel pt-0 mt-0">
+              <input type="checkbox" id="id-of-input5" checked/>
+              <i class="bi bi-bookmark-heart "></i>
+              <i class="bi bi-bookmark-heart-fill "></i>
+              <span>Favorite</span>
+            </label>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container-">
+          <h3 class="fw-bold">Dynamite Lumpia</h3>
+          <p class="fst-italic">Wrapped spicy long green peppers stuffed with cheese and sautéed ground pork and deep fried to perfection.</p>
+          <label class="fw-bold">Recipe by: </label>
+          <label>Lorem Ipsum</label>
+          <br>
+              <ul>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Prep:</label> 8 minutes</li>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Cook:</label> 20 minutes</li>
+                <li><label class="fw-bold">Total:</label> 28 minutes</li>
+              </ul>
+          <hr>
+        </div>
+        
+        <p class="fs-4">Ingredients</p>
+          <form>
+            <ul>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="dynamite1" class="form-check-input chkbox"> <label for="dynamite1" class="fst-normal text-black">8 pieces long green pepper</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="dynamite2" class="form-check-input chkbox">  <label for="dynamite2" class="fst-normal text-black">4 ounces cheddar cheese</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="dynamite3" class="form-check-input chkbox">  <label for="dynamite3" class="fst-normal text-black">8 pieces lumpia wrapper</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="dynamite4" class="form-check-input chkbox">  <label for="dynamite4" class="fst-normal text-black">2 cups cooking oil</label></li>
+            </ul>
+        </form>
+
+        <p class="fs-4">Ground Pork Filling</p>
+          <form>
+            <ul>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="pork1" class="form-check-input chkbox"> <label for="pork1" class="fst-normal text-black">6 ounces ground pork</label> (minced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="pork2" class="form-check-input chkbox">  <label for="pork2" class="fst-normal text-black">1 piece onion</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="pork3" class="form-check-input chkbox">  <label for="pork3" class="fst-normal text-black">3 cloves garlic</label> (crushed and minced)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="pork4" class="form-check-input chkbox">  <label for="pork4" class="fst-normal text-black">1 piece egg</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="pork5" class="form-check-input chkbox">  <label for="pork5" class="fst-normal text-black">2 tablespoons cooking oil</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="pork6" class="form-check-input chkbox">  <label for="pork6" class="fst-normal text-black">Salt and ground black pepper to taste</label></li>
+
+            </ul>
+        </form>
+        <hr>
+        <p class="fs-4 mt-0">Instructions</p>
+        <ol type="1">
+          <li>Prepare the ground pork stuffing by heating 3 tablespoons oil in a pan. Saute garlic and onion until the latter softens. 
+              Add ground pork. Saute until medium brown. Season with salt and ground black pepper. 
+              Remove from the pan and put on a large bowl. Let it cool down. Beat 1 piece of egg and pour into the cooked ground pork. Mix well. Set aside.</li>
+          <li>Slice one side of the peppers lengthwise all the way to the bottom. Remove the seeds by gently scraping using a small spoon or a butter knife. Set aside.</li>
+          <li>Slice the cheddar cheese into long pieces. Stuff individual slices of cheese into each pepper. Sccop the cooked meat mixture and stuff into the chili peppers. 
+              Make sure that there is enough meat.</li>
+          <li>Wrap the stuffed peppers in lumpia wrapper.</li>
+          <li>Heat 2 cups of oil in a pan. Fry each piece of dynamite lumpia in medium heat for 2 minutes per side or until lumpia wrapper turns golden brown. 
+              Note: you may fry longer if needed.</li>
+          <li>Remove from pan and place over a wire rack. Let it cool down. Arrange in a serving plate and then serve with your favorite condiment.</li>
+          <li>Share and enjoy!</li>
+        </ol>
+
+        <hr>
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+          <!-- star rating -->
+          <form class="needs-validation" novalidate>
+            <div class="rating-box mb-0">
+              <div class="stars pb-0 bg-body-secondary">
+                <p class="fs-5 pb-0">Recipe Rating: </p>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>    
+              <hr>
+            </div>
+            
+            <!-- comment section -->
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;"></textarea>
+              <label for="comments">Comment</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="form-control btn btn-secondary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- Leche Flan modal ------------------------------->
+<div class="modal fade" id="FlanModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">Leche Flan</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="ingredient">
+        <img src="leche-flan.jpg" alt="" id="BFimg" class="mb-3">
+        <div class="row">
+          <div class="col pt-1">
+            <div class="row">
+              <div class="col pt-1">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <div class="col d-flex justify-content-end Chk6">
+                <label for="id-of-input6" class="custom-checkbox6 FavLabel pt-0 mt-0">
+                  <input type="checkbox" id="id-of-input6" checked/>
+                  <i class="bi bi-bookmark-heart"></i>
+                  <i class="bi bi-bookmark-heart-fill"></i>
+                  <span>Favorite</span>
+                </label>
+              </div>
+            </div>
+          </div>
+                  </div>
+        <br>
+        <br>
+        <div class="container-">
+          <h3 class="fw-bold">Leche Flan</h3>
+          <p class="fst-italic">This is a simple and easy version of a famous Filipino dessert known as Leche Flan.</p>
+          <label class="fw-bold">Recipe by: </label>
+          <label>Lorem Ipsum</label>
+          <br>
+              <ul>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Prep:</label> 10 minutes</li>
+                <li class="pe-3" style="float: left;"><label class="fw-bold">Cook:</label> 45 minutes</li>
+                <li><label class="fw-bold">Total:</label> 55 minutes</li>
+              </ul>
+          <hr>
+        </div>
+        
+        <p class="fs-4">Ingredients</p>
+          <form>
+            <ul>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="flan1" class="form-check-input chkbox"> <label for="flan1" class="fst-normal text-black">10 pieces eggs</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="flan2" class="form-check-input chkbox">  <label for="flan2" class="fst-normal text-black">1 can condensed milkr</label> (14 oz)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="flan3" class="form-check-input chkbox">  <label for="flan3" class="fst-normal text-black">1 cup fresh milk</label> (or evaporated milk)</li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="flan4" class="form-check-input chkbox">  <label for="flan4" class="fst-normal text-black">1 cup granulated sugar</label></li>
+                <li class="fst-italic text-secondary"><input type="checkbox" value="" id="flan5" class="form-check-input chkbox">  <label for="flan5" class="fst-normal text-black">1 teaspoon vanilla extract</label></li>
+            </ul>
+        </form>
+        <hr>
+        <p class="fs-4 mt-0">Instructions</p>
+        <ol type="1">
+          <li>Using all the eggs, separate the yolk from the egg white (only egg yolks will be used).</li>
+          <li>Place the egg yolks in a big bowl then beat them using a fork or an egg beater.</li>
+          <li>Add the condensed milk and mix thoroughly.</li>
+          <li>Pour-in the fresh milk and Vanilla. Mix well.</li>
+          <li>Put the mold (llanera) on top of the stove and heat using low fire.</li>
+          <li>Put-in the granulated sugar on the mold and mix thoroughly until the solid sugar turns into liquid (caramel) having a light brown color. 
+              Note: Sometimes it is hard to find a Llanera (Traditional flan mold) depending on your location. I find it more convenient to use individual 
+              Round Pans in making leche flan.</li>
+          <li>Spread the caramel (liquid sugar) evenly on the flat side of the mold.</li>
+          <li>Wait for 5 minutes then pour the egg yolk and milk mixture on the mold.</li>
+          <li>Cover the top of the mold using an Aluminum foil.</li>
+          <li>Steam the mold with egg and milk mixture for 30 to 35 minutes.</li>
+          <li>After steaming, let the temperature cool down then refrigerate</li>
+          <li>Serve for dessert. Share and Enjoy!</li>
+        </ol>
+
+        <hr>
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+          <!-- star rating -->
+          <form class="needs-validation" novalidate>
+            <div class="rating-box mb-0">
+              <div class="stars pb-0 bg-body-secondary">
+                <p class="fs-5 pb-0">Recipe Rating: </p>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>    
+              <hr>
+            </div>
+            
+            <!-- comment section -->
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;"></textarea>
+              <label for="comments">Comment</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="form-control btn btn-secondary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- add Recipe modal -------------------------------->
+<div class="modal fade" id="AddRecipe" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">Add Recipe</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="AddRecipe">
+
+        <form class="row g-3 needs-validation" novalidate>          
+            <div class="form-floating">
+              <input type="text" class="mt-1 ps-3 w-100 form-control" placeholder="name" id="name" required>
+              <label for="name" class="ms-2">Recipe Name</label>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please enter recipe name.</div>
+            </div>
+            
+            <div class="input-group mb-3">
+              <span class="input-group-text">Prep:</span>
+              <input type="text" class=" form-control" >
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please enter prep time.</div>
+              <span class="input-group-text">Cook:</span>
+              <input type="text" class=" form-control" >
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please enter cook time.</div>
+              <span class="input-group-text">Total:</span>
+              <input type="text" class="form-control" >
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please enter total time.</div>
+            </div>
+
+            <p class="fs-6 mt-4 mb-0">Ingredients</p>
+            <div class="form-floating">
+              <textarea type="text" class="form-control" cols="30" rows="2" placeholder="ingredient" id="ingredient" required></textarea>
+              <label for="ingredient" class="ms-2">Add 1 or paste multiple items.</label>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please enter ingredients.</div>
+            </div>
+            <div class="form-floating">
+              <input type="text" class="form-control" placeholder="head" id="head" required>
+              <label for="head" class="ms-2">Ingredient Header</label>
+            </div>
+
+            <p class="fs-6 mt-4 mb-0">Instructions</p>
+            <div class="form-floating">
+              <textarea type="text" class="form-control" placeholder="instruction" id="instruction" required></textarea>
+              <label for="instruction" class="ms-2">Add 1 or paste multiple items.</label>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please enter cooking instructions.</div>
+            </div>
+            <div class="form-floating">
+              <input type="text" class="form-control" placeholder="head" id="head" required>
+              <label for="head" class="ms-2">Instruction Header</label>
+            </div>
+
+            <p class="fs-6 mt-4 mb-0">Recipe image</p>
+            <div class="input-group mb-3">
+              <input type="file" class="form-control" id="inputGroupFile02" required>
+              <label class="input-group-text" for="inputGroupFile02" >Upload</label>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please enter recipe image.</div>
+            </div>
+                    
+            <br>
+            <button type="submit" class="form-control btn btn-secondary">Submit</button>
+        </form>
+      </div>
+      
+
+    <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- Feedback modal ------------------------------->
+ <div class="modal fade" id="FeedbackModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel" >Feedback</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="feedback">
+
+        <div class="container bg-body-secondary">
+          <p class="fs-3 mb-0">Leave a Comment</p>
+          <p class="fs-6 mt-0">Have a question? Submit your question or comment below.</p>
+          
+                     
+            <!-- comment section -->
+            <div class="form-floating">
+              <textarea name="comments" id="comments" placeholder="Name" cols="30" rows="5" class="w-100 form-control" style="height: 100%;"></textarea>
+              <label for="comments">Comment</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="mt-1 w-100 form-control" placeholder="Name" id="name">
+              <label for="name">Name</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="email" class="mt-1 w-100 form-control" placeholder="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-secondary form-control">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- Footer ------------------------------->
+<div class="container-fluid mt-5 pt-5">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 KitchenKonnect.</p>
+
+    <a href="home.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <img src="KK3.png" alt="Bootstrap" width="60" height="60">
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal" data-bs-target="#ContactUsModal">Contact Us</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal" data-bs-target="#TermsModal">Terms of Service</a></li>
+    </ul>
+  </footer>
+</div>
+
+<!------------------------------- about us modal ------------------------------->
+<div class="modal fade" id="AboutUsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+        <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">KitchenKonnect</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" id="about">
+          <div class="container">
+            <h1 class="pb-2">About Us</h1>
+            <p>Welcome to KitchenKonnect, your ultimate destination for discovering and sharing delicious recipes from around the world. 
+              We are passionate about bringing food enthusiasts together and helping them explore the joys of cooking and sharing meals.     
+              At KitchenKonnect, we believe that cooking is a creative and joyful experience that connects people across cultures. 
+              Our platform is designed to empower home cooks, food bloggers, and professional chefs alike to showcase their culinary talents, 
+              share their favorite recipes, and inspire others in the kitchen. Whether you're a seasoned cook or just starting your culinary journey, 
+              KitchenKonnect is here to provide a wide range of recipes, cooking tips, meal plans, and a vibrant community that supports and encourages your love for food.</p>
+              Join our community today and embark on a delicious adventure!</p>
+          </div>
+      </div>
+        
+
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------- contact us modal ------------------------------->
+<div class="modal fade" id="ContactUsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+      <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">KitchenKonnect</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    
+    <div class="modal-body" id="about">
+
+      <main>
+        <div class="contact-us container">
+          <h2>Contact Us</h2>
+          <p>We would love to hear from you! If you have any questions, suggestions, or feedback, please feel free to reach out to us.</p>
+          <div class="contact-details">
+            <div class="contact-info">
+              <h3>Email</h3>
+              <p><a href="mailto:info@kitchenkonnect.com">info@kitchenkonnect.com</a></p>
+            </div>
+            <div class="contact-info">
+              <h3>Phone</h3>
+              <p>+1-123-456-7890</p>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3>Send us a message</h3>
+            <form>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-control" required></textarea>
+              <button type="submit" class="btn btn-secondary form-control mt-3">Send</button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+    </div>
+      
+
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<!------------------------------- Terms modal ------------------------------->
+<div class="modal fade" id="TermsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header" style="background-color: rgba(119, 39, 12, 0.729);">
+      <h2 class="modal-title fs-4 text-light" id="staticBackdropLabel">KitchenKonnect</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    
+    <div class="modal-body" id="contactUs">
+
+        <div class="container">
+          <h1>Terms of Service</h1>
+    <p>Please read these terms of service carefully before using our website.</p>
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using KitchenKonnect, you agree to be bound by these terms of service, our privacy policy, and any additional terms and conditions that may apply to specific sections of our website or services.</p>
+    <h2>2. User Conduct</h2>
+    <p>You are solely responsible for any content you post or contribute to KitchenKonnect. You agree not to engage in any of the following activities:</p>
+    <ul>
+      <li>Violating any applicable laws or regulations</li>
+      <li>Posting or sharing inappropriate, offensive, or harmful content</li>
+      <li>Impersonating any person or entity</li>
+      <li>Interfering with or disrupting the operation of the website</li>
+      <li>Attempting to gain unauthorized access to any part of the website</li>
+    </ul>
+    <h2>3. Intellectual Property</h2>
+    <p>All content on KitchenKonnect, including recipes, images, logos, and trademarks, is protected by intellectual property laws. You may not use, reproduce, or distribute any content from the website without prior written permission.</p>
+    <h2>4. Limitation of Liability</h2>
+    <p>KitchenKonnect and its owners will not be liable for any direct, indirect, incidental, consequential, or exemplary damages arising from the use or inability to use the website or its content.</p>
+    <h2>5. Modifications to Terms</h2>
+    <p>We reserve the right to modify or update these terms of service at any time without prior notice. It is your responsibility to review the terms periodically for any changes.</p>
+
+        </div>
+
+    </div>
+      
+
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+</div>
+</div>
+  
+<!------------------------------- Scripts ------------------------------->
+  <script>
+  // ------------------------------- star transition script -------------------------------
+    const stars = document.querySelectorAll(".stars i");
+    stars.forEach((star, index1) =>{
+      star.addEventListener("click", () => {
+        stars.forEach((star, index2) => {
+          index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+        })
+      })
+    });
+  </script>
+  </body>
+</html>
